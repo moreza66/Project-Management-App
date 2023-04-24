@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import Spinner from "../components/Spinner"
+import ClientInfo from "../components/clientInfo"
 import { useQuery } from "@apollo/client"
 import { GET_PROJECT } from "../queries/projectQueries"
 
@@ -22,9 +23,9 @@ export default function Project() {
                     <h1>{data.project.name}</h1>
                     <p>{data.project.description}</p>
                     <h5 className="mt-3">Project Status</h5>
-                    <p>{data.project.status}</p>
+                    <p className="lead">{data.project.status}</p>
 
-                    {/* <ClientInfo client={data.project.client} /> */}
+                    <ClientInfo client={data.project.client} />
 
                 </div>
             )}
